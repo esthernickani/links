@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*HEADER STYLES*/
+header {
+    margin: 2rem 10.375rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-authenticate {
+    background-color: transparent;
+    border: 1px solid #2BD0D0;
+    border-radius: 3px;
+    color: #2BD0D0;
+    padding: .5rem 1rem;
+}
+
+.btn-authenticate:hover {
+    cursor: pointer;
+}
+
+.btn-login {
+    margin-right: 1rem;
+}
+
+.btn-authenticate a {
+    color: #000;
+    text-decoration: none;
+}
+
+/*MAIN CONTAINER*/
+.main-top {
+    margin:0 0 5rem 10.375rem;
+}
+
+.main-text-image {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    overflow-x: hidden;
+}
+
+.main-text {
+    flex: 50;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-text h1{
+    font-size: 4.5rem;
+    color: #34313D;
+    line-height: 5.625rem;
+    letter-spacing: -2px;
+}
+
+.main-text p {
+    color: #9E9AA8;
+    font-size: 1.2rem;
+    letter-spacing: 0.15px;
+}
+
+.main-image {
+    flex: 50;
+}
+
+.main-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transform: translateX(2rem);
+}
+
+.main-top-bottom {
+    margin: 3rem 10.375rem 2rem 0;
+    background-image: url(/images/bg-shorten-desktop.svg);
+    background-color: #4B3F6B;
+    background-blend-mode: screen;
+    height: 10.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+}
+
+#link {
+    margin: 0 1rem 0 4rem;
+    width: 42rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+#form-submit {
+    background-color: #2BD0D0;
+    border: 1px solid transparent;
+    height: 2.9rem;
+    padding: 0 2rem 0 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+.main-bottom {
+    background-color: #EFF1F7;
+    padding-top: 5rem;
+}
+
+.main-bottom-top {
+    width: 37.5%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-bottom-top h2{
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+    color: #34313D;
+}
+
+.main-bottom-top p {
+    font-size: 1.125rem;
+    color: #9E9AA8;
+}
+
+.main-bottom-bottom {
+    display: flex;
+    margin: 5rem 10.375rem 0 10.375rem;
+    padding: 0 0 9rem 0;
+    justify-content: space-between;
+    position: relative;
+}
+
+.card {
+    width: 30%;
+    background-color: #FFFFFF;
+    padding: 0 1.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start
+}
+
+.card img{
+    transform: translateY(-1.5rem);
+    border: 1px solid #3A3054;
+    background-color: #3A3054;
+    border-radius: 50%;
+    padding: 0.75rem;
+    width: 23%;
+}
+
+.card h3{
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.card p {
+    font-size: 0.8rem;
+}
+
+.card-middle {
+    transform: translateY(2.5rem);
+    padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.card-right {
+    transform: translateY(5rem);
+}
+
+hr {
+    transform: translateY(20rem);
+    border: 5px solid #2BD0D0;
+}
+
+footer {
+    background-image: url(/images/bg-boost-desktop.svg);
+    background-color: #4B3F6B;
+    background-blend-mode: screen;
+    height: 8rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}

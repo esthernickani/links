@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} Save shortened link {% endblock %}
+
+{% block content %}
+<h2>Save shortened link</h2>
+    <form action="/link/short/add" method="POST" class="">
+        <div class="form_container">
+            <div>
+                <label for="link" class="link">Link</label>
+                <input type="text" class="link" name="link" value={{link}}>
+            </div>
+            <div>
+                <label for="platform" class="platform">Platform</label>
+                <input type="text" class="platform" name="platform">
+            </div>
+            <button class=""><a href="/" class="">Cancel</a></button>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    {% endblock %}

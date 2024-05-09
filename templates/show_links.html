@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} Links {% endblock %}
+
+{% block content %}
+    <div>
+        {% if links %}
+            <ul>
+                {% for link in links %}
+                    <li>{{link.platform}} {{link.link}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2>You have no links</h2>
+            <button><a href="/links/add">Add new link</a></button>
+        {% endif %}
+
+    </div>
+{% endblock %}

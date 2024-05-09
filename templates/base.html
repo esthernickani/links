@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon-32x32.png">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>{% block title %} Shortly URL shortening API {% endblock %}</title>
+</head>
+<body>
+  <header>
+    <img src="/static/images/logo.svg" alt="Shortly logo" class="">
+      {% if current_user.is_authenticated %}
+        <button class="btn-authenticate">
+          <a href="/logout">Logout</a>
+        </button>
+      {% else %}
+      <div>
+        <button class="btn-authenticate btn-login">
+          <a href="/login">Login</a>
+        </button>
+        <button class="btn-authenticate">
+          <a href="/signup">Sign up</a>
+        </button>
+      </div>
+        {% endif %}
+  </header>
+  <div class="flash_message">
+      {% with errors = get_flashed_messages(category_filter=["error"]) %}
+          {% if errors %}
+          <div class="alert-message-error">
+          <ul>
+              {% for msg in errors %}
+              <li>{{ msg }}</li>
+              {% endfor %}
+          </ul>
+          </div>
+          {% endif %}
+      {% endwith %}
+  </div>
+  <div class="flash_message">
+      {% with successes = get_flashed_messages(category_filter=["success"]) %}
+          {% if successes %}
+          <div class="alert-message-success">
+          <ul>
+              {% for msg in successes %}
+              <li>{{ msg }}</li>
+              {% endfor %}
+          </ul>
+          </div>
+          {% endif %}
+      {% endwith %}
+  </div>
+
+  {% block content %}
+
+  <div class="main-top">
+    <div class="main-text-image">
+      <div class="main-text">
+        <h1>More than just shorter links</h1>
+        <p>Build your brand’s recognition and get detailed insights on how your links are performing.</p>
+      </div>
+      <div class="main-image">
+        <img src="/static/images/illustration-working.svg" alt="Woman on computer desk" class="">
+      </div>
+    </div>
+    <div class="main-top-bottom">
+      <form class="shortening-link" method="POST">
+        <label for="link" class="hidden"></label>
+        <input type="text" name="link" id="link" placeholder="Shorten a link here..." required>
+        <input id="form-submit" value="Shorten it!" type="submit">
+      </form>
+    </div>
+  </div>
+  <div class="main-bottom">
+    <div class="main-bottom-top">
+      <hr class="horizontal-line">
+      <h2>Memorable Links</h2>
+      <p>Make your URL more friendly & memorable. You can have a human-readable address</p>
+    </div>
+    <div class="main-bottom-bottom">
+      <div class="card card-left">
+        <img src="/static/images/icon-brand-recognition.svg" alt="Line graph" class="">
+        <h3>Brand Recognition</h3>
+        <p>Boost your brand recognition with each click. Generic links don’t
+          mean a thing. Branded links help instil confidence in your content.</p>
+      </div>
+      <div class="card card-middle">
+        <img src="/static/images/icon-detailed-records.svg" alt="Line graph" class="">
+        <h3>Streamlined Appearance</h3>
+        <p>Shortened links look better in instagram bios and twitter bios. If you're trying to build a brand a streamlined appearance would be very helpful</p>
+      </div>
+      <div class="card card-right">
+        <img src="/static/images/icon-fully-customizable.svg" alt="Paint brushes" class="">
+        <h3>Fully Customizable</h3>
+        <p>Improve brand awareness and content discoverability through customizable
+          links, supercharging audience engagement.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <h2>Boost your links today</h2>
+  </footer>
+  {% endblock %}
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
