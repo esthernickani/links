@@ -145,6 +145,33 @@ def show_links():
     links = Link.query.filter_by(user_id = current_user.get_id()).all()
     return render_template('/show_links.html', links=links)
 
+@app.route('/profile', methods = ['GET', 'POST'])
+@login_required
+def show_profile():
+    """show profile page for organization and edit"""
+    user = User.query.get(current_user.get_id())
+
+    return render_template('profile.html', user = user)
+
+@app.route('/profile/edit', methods = ['GET', 'POST'])
+@login_required
+def edit_profile():
+    """show profile page for organization and edit"""
+    user = User.query.get(current_user.get_id())
+    form = EditProfileForm(obj=user)
+
+    if form.validate_on_submit():
+        #get form data and save to database and redirect to profile overview
+        user.first_name = form.first_name.data,
+        user.last_name = form.last_name.data,
+        user.email = form.email.data
+
+        db.session.commit()
+        flash('Profile successfully edited', 'success')
+        return redirect('/profile')
+    else:
+        return render_template('edit_profile.html', form=form)
+
 
 @app.route('/links/add', methods=['GET', 'POST'])
 @login_required

@@ -16,6 +16,12 @@
     <img src="/static/images/logo.svg" alt="Shortly logo" class="">
       {% if current_user.is_authenticated %}
         <button class="btn-authenticate">
+          <a href="/profile">Profile</a>
+        </button>
+        <button class="btn-authenticate">
+          <a href="/links">Links</a>
+        </button>
+        <button class="btn-authenticate">
           <a href="/logout">Logout</a>
         </button>
       {% else %}

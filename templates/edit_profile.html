@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Edit profile {% endblock %}
+{% block content %}
+    <div class="main-content" id="edit-form-content">
+        <h3>Edit Profile</h3>
+            <form method="POST" id="edit-profile-form">
+                {{ form.hidden_tag() }}
+
+                {% for field in form if field.widget.input_type != 'hidden' %}
+                    {% for error in field.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                    {{ field.label.text}}
+                    {{ field(placeholder=field.label.text, class="form-control") }}
+                {% endfor %}
+
+                <button class="save-changes-btn">Save changes</button>
+            </form>
+            <button class="cancel-edit-btn"><a href="/profile">Cancel</a></button>
+    </div>
+{% endblock %}
+
