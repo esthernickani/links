@@ -2,22 +2,27 @@
 {% block title %} Login {% endblock %}
 
 {% block content %}
-    <div class="login">
-        <h2>Sign in</h2>
-        <form method="POST" id="login_form">
-            {{ form.hidden_tag() }}
+    <div class="content">
+        <div class="login">
+            <h2>Login</h2>
+            <p>Add your details to get back into the app</p>
+            <form method="POST" id="login_form">
+                {{ form.hidden_tag() }}
 
-            {% for field in form if field.widget.input_type != 'hidden' %}
-            <div>
+                {% for field in form if field.widget.input_type != 'hidden' %}
                 {% for error in field.errors %}
-                    <span class="text-danger">{{ error }}</span>
+                    <span>{{ error }}</span>
                 {% endfor %}
-                {{ field(placeholder=field.label.text, class="form-control") }}
-            </div>
-            {% endfor %}
+                    {{ field.label.text }}
+                    {{ field(placeholder=field.label.text, class="form-control") }}
+                {% endfor %}
 
-            <button>Sign in</button>
-        </form>
-        <p>Don't have an account? </p><a href="/signup" class="">Sign up</a></p>
+                <button>Sign in</button>
+            </form>
+            <div>
+                <p>Don't have an account? </p>
+                <a href="/signup" class="">Sign up</a>
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -2,10 +2,12 @@
 {% block title %} Profile {% endblock %}
 
 {% block content %}
-    <div>
-        <p>First Name: {{user.first_name}}</p>
-        <p>Last Name: {{user.last_name}}</p>
-        <p>Email: {{user.email}}</p>
-        <button><a href="/profile/edit">Edit profile</a></button>
+    <div class="content">
+        <div class="profile-info">
+            <p>First Name: {{user.first_name}}</p>
+            <p>Last Name: {{user.last_name}}</p>
+            <p>Email: {{user.email}}</p>
+            <button class="btn"><a href="/profile/edit">Edit profile</a></button>
+        </div>
     </div>
 {% endblock %}

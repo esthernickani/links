@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %} Edit profile {% endblock %}
 {% block content %}
-    <div class="main-content" id="edit-form-content">
-        <h3>Edit Profile</h3>
+    <div class="content" id="edit-form-content">
+        <div class="edit-profile">
+            <h3>Edit Profile</h3>
             <form method="POST" id="edit-profile-form">
                 {{ form.hidden_tag() }}
 
@@ -14,9 +15,10 @@
                     {{ field(placeholder=field.label.text, class="form-control") }}
                 {% endfor %}
 
-                <button class="save-changes-btn">Save changes</button>
+                <button class="btn">Save changes</button>
             </form>
-            <button class="cancel-edit-btn"><a href="/profile">Cancel</a></button>
+            <button class="btn"><a href="/profile">Cancel</a></button>
+        </div>
     </div>
 {% endblock %}
 

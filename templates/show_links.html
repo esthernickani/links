@@ -2,24 +2,34 @@
 {% block title %} Links {% endblock %}
 
 {% block content %}
-    <div>
-        {% if links %}
-            <ul>
-                {% for link in links %}
-                    <li>{{link.platform}} {{link.link}}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <h2>You have no links</h2>
-            <button><a href="/links/add">Add new link</a></button>
-        {% endif %}
+    <div class="content">
+        <div class="links">
+            <div>
+                {% if links %}
+                <ul>
+                    {% for link in links %}
+                        <div class="link">
+                            <span>
+                                <p><b>Platform: </b>{{link.platform}}</p>
+                                <span class="link-span"><b>Link: </b><p class="link_to_copy"> {{link.link}}</p></span>
+                            </span>
+                            <p class="copy_link"><i class="fa-solid fa-copy"></i></p>
+                        </div>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <h2>You have no links</h2>
+                    <button><a href="/links/add">Add new link</a></button>
+                {% endif %}
+            </div>
+            <button class="btn-authenticate">
+                <a href="/">Shorten link</a>
+            </button>
+            <button class="btn-authenticate">
+                <a href="/links/add">Add link</a>
+            </button>
 
-        <button class="btn-authenticate">
-            <a href="/">Shorten link</a>
-        </button>
-        <button class="btn-authenticate">
-            <a href="/links/add">Add link</a>
-        </button>
-
+        </div>
     </div>
+
 {% endblock %}

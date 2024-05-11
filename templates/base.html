@@ -15,6 +15,7 @@
   <header>
     <img src="/static/images/logo.svg" alt="Shortly logo" class="">
       {% if current_user.is_authenticated %}
+      <div>
         <button class="btn-authenticate">
           <a href="/profile">Profile</a>
         </button>
@@ -24,6 +25,7 @@
         <button class="btn-authenticate">
           <a href="/logout">Logout</a>
         </button>
+      </div>
       {% else %}
       <div>
         <button class="btn-authenticate btn-login">
@@ -112,6 +114,7 @@
     <h2>Boost your links today</h2>
   </footer>
   {% endblock %}
+  <script src="https://kit.fontawesome.com/e2cf4adc1b.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

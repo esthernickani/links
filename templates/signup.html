@@ -2,22 +2,25 @@
 {% block title %} Signup {% endblock %}
 
 {% block content %}
-<div>
-    <form method="POST" id="signup_form">
-        {{ form.hidden_tag() }}
+<div class="content">
+    <div class="signup">
+        <form method="POST" id="signup_form">
+            {{ form.hidden_tag() }}
 
-        {% for field in form if field.widget.input_type != 'hidden' %}
-        {% for error in field.errors %}
-            <span>{{ error }}</span>
-        {% endfor %}
-        <span>
-            {{ field.label.text }}
-            {{ field(placeholder=field.label.text, class="form-control") }}
-        </span>
-        {% endfor %}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+            {% for error in field.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+            <span>
+                {{ field.label.text }}
+                {{ field(placeholder=field.label.text, class="form-control") }}
+            </span>
+            {% endfor %}
 
-        <button>Sign up!</button>
-    </form>
-    <p>Already have an account? <a href="/login">Login</a></p>
+            <button>Sign up!</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
 </div>
+
 {% endblock %}
