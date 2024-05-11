@@ -9,6 +9,7 @@ This is a link shortener where users can shorten links, create accounts and save
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Implemented features](#implemented-features)
+    - [Test](#test)
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
@@ -25,6 +26,8 @@ Users should be able to shorten links, create accounts, login, save links.
 
 Ability to shorten link, create account, copy saved links, login
 
+### Test
+To run test: python3 -m unittest test_view
 
 ### Links
 
