@@ -8,6 +8,7 @@ This is a link shortener where users can shorten links, create accounts and save
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
+    - [Implemented features](#implemented-features)
     - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
@@ -20,9 +21,15 @@ This is a link shortener where users can shorten links, create accounts and save
 
 Users should be able to shorten links, create accounts, login, save links.
 
+### Implemented features
+
+Ability to shorten link, create account, copy saved links, login
+
+
 ### Links
 
 - Solution URL: [Github url](https://github.com/esthernickani/links.git)
+- Live URL: [Live url](https://url-shortener-12-d0b4f8b62543.herokuapp.com/)
 
 ## My process
 
@@ -32,6 +39,7 @@ Users should be able to shorten links, create accounts, login, save links.
 - Python/Flask
 - Javascript
 - PostgreSQL
+- CleanURI API
 
 
 ## Author

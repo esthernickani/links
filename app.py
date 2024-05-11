@@ -19,7 +19,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = environ.get("SQLALCHEMY_TRACK_MOD
 app.config['SQLALCHEMY_ECHO'] = environ.get("SQLALCHEMY_ECHO")
 app.config['SESSION_TYPE'] = environ.get("SESSION_TYPE")
 
-TOKEN = environ.get("TOKEN")
 #connect to db
 connect_db(app)
 
